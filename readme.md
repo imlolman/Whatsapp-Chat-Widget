@@ -1,6 +1,6 @@
 # WhatsApp Chat widget for websites
 
-Demo: https://imlolman.github.io/whatsapp-bottom-button/
+Demo: https://imlolman.github.io/Whatsapp-Chat-Widget/
 
 
 https://user-images.githubusercontent.com/11874560/222985797-3aeca0e5-c162-4346-967a-ed35be3cdf66.mp4
