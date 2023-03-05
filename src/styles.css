@@ -1,0 +1,205 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  font-family: sans-serif;
+}
+
+.chat-bg::before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.08;
+  background-image: url(https://elfsight.com/assets/chats/patterns/whatsapp.png);
+}
+
+.chat-box {
+  padding: 7px 14px 6px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 8px 8px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+  transform-origin: center top;
+  z-index: 2;
+  box-shadow: rgb(0 0 0 / 13%) 0px 1px 0.5px;
+  margin-top: 4px;
+  margin-left: -22px;
+  max-width: calc(100% - 66px);
+  visibility: hidden;
+  opacity: 0;
+  transition: margin-left 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+}
+
+.chat-box.show {
+  visibility: visible;
+  opacity: 1;
+  margin-left: 0px;
+}
+
+.chat-box::before {
+  position: absolute;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAMAAADp2asXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACQUExURUxpccPDw9ra2m9vbwAAAAAAADExMf///wAAABoaGk9PT7q6uqurqwsLCycnJz4+PtDQ0JycnIyMjPf3915eXvz8/E9PT/39/RMTE4CAgAAAAJqamv////////r6+u/v7yUlJeXl5f///5ycnOXl5XNzc/Hx8f///xUVFf///+zs7P///+bm5gAAAM7Ozv///2fVensAAAAvdFJOUwCow1cBCCnqAhNAnY0WIDW2f2/hSeo99g1lBYT87vDXG8/6d8oL4sgM5szrkgl660OiZwAAAHRJREFUKM/ty7cSggAABNFVUQFzwizmjPz/39k4YuFWtm55bw7eHR6ny63+alnswT3/rIDzUSC7CrAziPYCJCsB+gbVkgDtVIDh+DsE9OTBpCtAbSBAZSEQNgWIygJ0RgJMDWYNAdYbAeKtAHODlkHIv997AkLqIVOXVU84AAAAAElFTkSuQmCC);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  top: 0px;
+  left: -12px;
+  width: 12px;
+  height: 19px;
+}
+
+.chat-time {
+  text-align: right;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(17, 17, 17, 0.5);
+  margin-right: -8px;
+  margin-bottom: -4px;
+}
+
+.chat-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.chat-message {
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 4px;
+  color: rgb(17, 17, 17);
+}
+
+.chat-btn {
+  padding: 8px 12px;
+  border-radius: 24px;
+  border: none;
+  background: rgb(0, 201, 98);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 20px;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.whatsapp-svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: rgb(255, 255, 255);
+  z-index: 1;
+  margin-right: 7px;
+}
+
+.chat-whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.replies-in {
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 4px;
+  color: rgb(29, 33, 41);
+}
+
+.name-head {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: rgb(29, 33, 41);
+}
+
+.need-btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#wa-box.show {
+  animation: fadeInUp ease 0.5s;
+  -webkit-animation: fadeInUp ease 0.5s;
+  animation-fill-mode: forwards;
+  display: block !important;
+}
+
+#wa-box.hide {
+  animation: fadeOutDown ease 0.5s;
+  -webkit-animation: fadeOutDown ease 0.5s;
+  animation-fill-mode: forwards;
+  display: block !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+}
