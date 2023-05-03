@@ -36,6 +36,7 @@ class WAChatBox {
     this.iframe.style.width = "200px";
     this.iframe.style.height = "100px";
     this.iframe.style.border = "none";
+    this.iframe.style.zIndex = "999999999";
   }
 
   iframeLoaded = () => {
